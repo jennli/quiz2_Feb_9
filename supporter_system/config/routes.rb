@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   root 'requests#index'
   resources :requests
 
-  post "/requests/:id" => "requests#update_status", as: 'update_status'
+  post "/requests/status/:id" => "requests#update_status", as: 'update_status'
 
   # Example resource route with options:
   #   resources :products do

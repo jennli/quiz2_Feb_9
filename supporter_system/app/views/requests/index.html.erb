@@ -39,7 +39,7 @@
         <td><%=r.department%></td>
         <td><%=r.message%></td>
         <td> <%= link_to "Delete", r, method: :delete, data: {confirm: "Are you sure?"} %> | <%= link_to "Edit", edit_request_path(r) %> </td>
-        <td><%=link_to r.status, requests_path%></td>
+        <td><%=button_to r.status, update_status_path(r)%></td>
 
       </tr>
       <% end %>

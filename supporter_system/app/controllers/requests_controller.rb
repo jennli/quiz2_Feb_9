@@ -48,8 +48,12 @@ class RequestsController < ApplicationController
   end
 
   def update_status
-    byebug
-    @request.update request_params
+    # byebug
+    if @request.status.downcase == "undone"
+      @request.update status: "Done!"
+    else
+      @request.update status: "undone"
+    end
     redirect_to requests_path, notice: "Status for request #{@request.id} updated successfully"
   end
 
