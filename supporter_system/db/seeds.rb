@@ -12,3 +12,5 @@
   message: Faker::Company.bs,
   status: "undone"
 end
+
+# "select department, count(*) from Requests group by department order by department"
