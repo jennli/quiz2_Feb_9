@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SupporterSystem</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<style>
+.banner{
+  width:60%;
+  margin-left: 20%;
+}
+body{
+  margin: 5% 10% 0 10%;
+}
+
+table, tr, td{
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(odd) {
+  background: rgb(233, 219, 233);
+}
+
+tr:nth-child(even) {
+  background: beige;
+}
+
+.notice{
+  color:red;
+  text-align: center;
+}
+
+</style>
+<title>SupporterSystem</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="navbar">
+    <%= link_to "HOME", root_path %> |
+    <%= link_to "NEW REQUEST", new_request_path%>
+  </div>
+
+  <img class="banner" src="http://facilities.nmsu.edu/wp-content/uploads/sites/57/2013/09/btn_service1.gif" />
+  <div class="notice"> <%= notice || alert %></div>
+  <%= yield %>
 
 </body>
 </html>

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  root 'requests#index'
+  resources :requests
+
+  post "/requests/:id" => "requests#update_status", as: 'update_status'
 
   # Example resource route with options:
   #   resources :products do

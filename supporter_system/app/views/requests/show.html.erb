@@ -1,0 +1,10 @@
+<p class="request-content"><%= "Requested by: #{raw@request.name}" %></p>
+<p class="request-content"><%= "Email: #{raw@request.email}" %></p>
+<p class="request-content"><%= "Department: #{raw@request.department}" %></p>
+<p class="request-content"><%= "Request detail: #{raw@request.message}" %></p>
+<p class="date"><%="CREATED AT: #{@request.created_at}" %></p>
+
+<div>
+  <p><%= link_to "Delete", @request, method: :delete, data: {confirm: "Are you sure?"} %> |
+    <%= link_to "Edit", edit_request_path %> </p>
+  </div>
